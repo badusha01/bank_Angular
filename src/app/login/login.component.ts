@@ -20,22 +20,22 @@ export class LoginComponent {
     1003:{username:"mega",acno:1003,password:"abc123",balance:0},
   }
 
-    // login(){
-    //   var acnum=this.acno
-    //   var psw=this.pass
-    //   var userDetails=this.userDetails
-    //   if(acnum in userDetails){
-    //     if(psw==userDetails[acnum]["password"]){
+    login(){
+      var acnum=this.acno
+      var psw=this.pass
+      var userDetails=this.userDetails
+      if(acnum in userDetails){
+        if(psw==userDetails[acnum]["password"]){
     
-    //         alert('login success')
-    //       }
-    //       else{
-    //         alert('incorrect password')
-    //       }
-    //     }
-    //     else{
-    //       alert('incorrect account number')
-    //     }
+            alert('login success')
+          }
+          else{
+            alert('incorrect password')
+          }
+        }
+        else{
+          alert('incorrect account number')
+        }
       
 
     // }
@@ -52,25 +52,8 @@ export class LoginComponent {
     // }
     
 
-    login(acnum:any,psw:any){
-      var acnum=acnum.value
-      var psw=psw.value
-      var userDetails=this.userDetails
-      if(acnum in userDetails){
-        if(psw==userDetails[acnum]["password"]){
-    
-            alert('login success')
-          }
-          else{
-            alert('incorrect password')
-          }
-        }
-        else{
-          alert('incorrect account number')
-        }
-      
-
-    }
+  
+      }
 
 
 }
