@@ -129,3 +129,12 @@ Dependency Injection is done inside constructor
         access specifier - private / public
         - private: can use the injecting class only in that class
         - public : can use the injecting class in other classes of that file
+
+
+
+ANGULAR SERVICES
+----------------
+It is a file in angular 
+All components can access the content of service file 
+
+-create    ng g s filename  (ng generate service filename)
