@@ -42,6 +42,58 @@ export class DataService {
       return false
     }
   }
+   
+  deposit(acno:any,psw:any,amnt:any){
+    // to convert string amnt to int
+    var amount=parseInt(amnt)
+    var userDetails=this.userDetails
+    if(acno in userDetails){
+      if(psw==userDetails[acno]["password"]){
+        userDetails[acno]["balance"]+=amount
+        console.log(userDetails);
+        
+        return userDetails[acno]["balance"]
+
+      }
+      else{
+        return false
+      }
+    }
+    else{
+      return false
+    }
+
+  }
+
+
+  withdraw(acno:any,psw:any,amnt:any){
+    // to convert string amnt to int
+    var amount=parseInt(amnt)
+    var userDetails=this.userDetails
+    if(acno in userDetails){
+      if(psw==userDetails[acno]["password"]){
+        if(amount<userDetails[acno]["balance"]){
+          userDetails[acno]["balance"]-=amount
+          console.log(userDetails);
+          
+          return userDetails[acno]["balance"]
+        }
+        else{
+          alert('Insufficient balance')
+        }
+       
+
+      }
+      else{
+        return false
+      }
+    }
+    else{
+      return false
+    }
+
+  }
+
 
   constructor() { }
 }
