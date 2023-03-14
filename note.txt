@@ -138,3 +138,35 @@ It is a file in angular
 All components can access the content of service file 
 
 -create    ng g s filename  (ng generate service filename)
+
+   Angular Directives
+   ------------------
+
+   used to manipulate DOM
+   
+   1- component Directives
+   2- structural Directives
+      -*ngFor
+  
+   3-
+
+
+   Form Validation In Angular
+   --------------------------
+
+   form creation in angular
+
+    1.template driven form
+    2.model driven form 
+   
+Model Driven Form
+-----------------
+
+ -reactive form 
+      -ReactiveFormsModule    -  module used to build model form 
+      -FormBuilder            -  class used to build model form
+
+      
+      -a model contain  -form group
+                        -array
+                        -controller

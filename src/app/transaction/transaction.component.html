@@ -1,0 +1,23 @@
+
+<h1 class="text-center container">
+    Transaction History
+</h1>
+<div class="container w-50 mt-2 p-3 text-center bg-info text-white border" style=" font-size: 2em; border-radius: 20px;">
+
+    <table class="text-center w-100">
+        <thead>
+            <tr>
+                <th class="border">Type</th>
+                <th class="border">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+         <tr *ngFor="let i of transactionArray">
+            <td>{{i.Type}}</td>
+            <td>{{i.Amount}}</td>
+         </tr>
+            
+            
+        </tbody>
+    </table>
+</div>

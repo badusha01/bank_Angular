@@ -44,7 +44,7 @@ export class DashboardComponent {
     var amnt=this.amnt1
     const result=this.ds.withdraw(acno,psw,amnt)
     if(result){
-      alert(`your account has been debited with amount${amnt} and the available balance is ${result}`)
+      alert(`your account has been debited with amount ${amnt} and the available balance is ${result}`)
     }
     else{
       alert('incorrect acno or password')
