@@ -146,7 +146,8 @@ All components can access the content of service file
    
    1- component Directives
    2- structural Directives
-      -*ngFor
+      - *ngFor
+      - *ngIf 
   
    3-
 
