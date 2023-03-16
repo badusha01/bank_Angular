@@ -17,8 +17,8 @@
         <input formControlName="psw" id="p1" name="password" class="form-control mt-2 p-2" type="password" placeholder="password">
     </div>
     <div *ngIf="this.registerForm.get('psw')?.errors && this.registerForm.get('psw')?.touched" class="text-start ms-2" >
-        <p class="text-danger">include characters only</p>
-    </div>
+        <p class="text-danger">include characters and numbers only</p>
+    </div> 
     <button (click)="register()"  class="btn btn-info mt-4 p-2">Register</button>
     <p class="mt-2 text-black">Already have an account? <a class="text-info" href="">Sign In</a></p>
 </form>

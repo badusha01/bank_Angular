@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -14,6 +15,19 @@ export class DataService {
     1003:{username:"megha",acno:1003,password:"abc123",balance:0,transaction:[]}
   }
   constructor() { }
+
+  saveDetails(){
+    if(this.userDetails){
+      localStorage.setItem("userDetails",JSON.stringify(this.userDetails))
+    }
+    if(this.currentUser){
+      localStorage.setItem("currentUser",this.currentUser)
+    }
+    if(this.currentUser){
+      localStorage.setItem("currentAcno",JSON.stringify(this.currentAcno))
+    }
+  }
+
   // currentUser:any
    
   register (acno:any,uname:any,psw:any){
@@ -24,7 +38,7 @@ export class DataService {
     else{
       userDetails[acno]={username:uname,acno,password:psw,balance:0,transaction:[]}
       console.log(userDetails);
-      
+      this.saveDetails()
       return true
     }
   }
@@ -36,6 +50,7 @@ export class DataService {
         // store current user
         this.currentUser=userDetails[acno]["username"]
         this.currentAcno=acno
+        this.saveDetails()
         return true 
       }
       else{
@@ -62,6 +77,7 @@ export class DataService {
             Amount:amount 
           }
         )
+        this.saveDetails()
         return userDetails[acno]["balance"]
 
       }
@@ -94,7 +110,7 @@ export class DataService {
           )
           // console.log(userDetails);
           
-          
+          this.saveDetails()
           return userDetails[acno]["balance"]
         }
         else{

@@ -171,3 +171,13 @@ Model Driven Form
       -a model contain  -form group
                         -array
                         -controller
+
+Local Storagae In Angular
+-------------------------
+ 
+ CRUD - Create Read Update Delete
+ 
+C - localStorage.setItem()
+R - localStorage.getItem()
+U - localStorage.setItem()
+D - localStorage.removeItem()

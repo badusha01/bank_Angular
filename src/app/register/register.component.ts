@@ -9,37 +9,37 @@ import { DataService } from 'services/data.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-//  acno:any
-//  psw:any
-//  uname:any
- constructor(private ds: DataService, private router:Router,private fb:FormBuilder){}
+  //  acno:any
+  //  psw:any
+  //  uname:any
+  constructor(private ds: DataService, private router: Router, private fb: FormBuilder) { }
 
-//  model for register form
-registerForm=this.fb.group({
-  acno:['',[Validators.required,Validators.pattern('[0-9]+')]],
-  psw:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]+')]],
-  uname:['',[Validators.required,Validators.pattern('[a-zA-Z]+')]]
-})
+  //  model for register form
+  registerForm = this.fb.group({
+    acno: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+    psw: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
+    uname: ['', [Validators.required, Validators.pattern('[a-zA-Z]+')]]
+  })
 
- register(){
-  var acno=this.registerForm.value.acno
-  var psw=this.registerForm.value.psw
-  var uname=this.registerForm.value.uname
-  if(this.registerForm.valid){
+  register() {
+    var acno = this.registerForm.value.acno
+    var psw = this.registerForm.value.psw
+    var uname = this.registerForm.value.uname
 
 
-  const result=this.ds.register(acno,uname,psw)
-  if(result){
-    alert('registered')
-    this.router.navigateByUrl("")
+    if (this.registerForm.valid) {
+      const result = this.ds.register(acno, uname, psw)
+      if (result) {
+        alert('registered')
+        this.router.navigateByUrl("")
+      }
+      else {
+        alert('user already present')
+      }
+
+    }
+    else {
+      alert('Invalid form')
+    }
   }
-  else{
-    alert('user already present')
-  }
-
- }
- else{
-  alert('Invalid form')
- }
-}
 }
